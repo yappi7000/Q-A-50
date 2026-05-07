@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MNP初級者向け Q&Aベスト50</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #f4f6fb;
+    --card:    #ffffff;
+    --border:  #e2e8f4;
+    --red:     #e8002d;
+    --red-lt:  #fff0f3;
+    --orange:  #ff6b00;
+    --org-lt:  #fff4ec;
+    --blue:    #0066cc;
+    --blue-lt: #e8f2ff;
+    --green:   #00a550;
+    --grn-lt:  #e6f9f0;
+    --purple:  #7c3aed;
+    --pur-lt:  #f3f0ff;
+    --yellow:  #f59e0b;
+    --yel-lt:  #fffbe6;
+    --teal:    #0891b2;
+    --tel-lt:  #e0f7fa;
+    --pink:    #db2777;
+    --pnk-lt:  #fdf2f8;
+    --text:    #1a1a2e;
+    --muted:   #5a6480;
+    --white:   #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #0044cc 0%, #0088ff 50%, #00ccff 100%);
+    padding: 56px 20px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 5px;
+    background: repeating-linear-gradient(90deg,#fff 0,#fff 24px,transparent 24px,transparent 48px);
+    opacity: .3;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,.25);
+    border: 1px solid rgba(255,255,255,.5);
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 16px; border-radius: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(4px);
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(30px, 6vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 12px rgba(0,0,0,.15);
+  }
+  .hero h1 span { color: #ffd600; }
+  .hero p {
+    font-size: 14px;
+    color: rgba(255,255,255,.88);
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-size: 12px;
+    color: rgba(255,255,255,.9);
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+  }
+  .hero-stat strong {
+    color: #ffd600;
+    font-size: 20px;
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+
+  /* ── WRAPPER ── */
+  .wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.05);
+  }
+  .toc h2 {
+    font-size: 11px; font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 6px;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    transition: background .15s;
+    border: 1px solid transparent;
+  }
+  .toc-item:hover {
+    background: var(--bg);
+    border-color: var(--border);
+  }
+  .toc-dot {
+    width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 44px; }
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 900;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+  }
+  .section-title {
+    font-size: 16px; font-weight: 700;
+    color: var(--text);
+    flex: 1;
+  }
+  .section-count {
+    font-size: 11px; color: var(--muted);
+    background: var(--bg);
+    padding: 3px 10px; border-radius: 20px;
+    border: 1px solid var(--border);
+    font-weight: 700;
+  }
+
+  /* ── Q&A CARD ── */
+  .qa-list { display: flex; flex-direction: column; gap: 8px; }
+
+  .qa-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow .2s, border-color .2s;
+    box-shadow: 0 1px 6px rgba(0,0,0,.04);
+  }
+  .qa-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  }
+  .qa-card.open {
+    border-color: var(--accent-color, #0066cc);
+    box-shadow: 0 4px 20px rgba(0,102,204,.1);
+  }
+
+  .qa-q {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 15px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .qa-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 900;
+    color: var(--muted);
+    min-width: 28px;
+    padding-top: 2px;
+    letter-spacing: .5px;
+  }
+  .qa-q-label {
+    font-size: 14px; font-weight: 700;
+    color: var(--text);
+    flex: 1;
+    line-height: 1.55;
+  }
+  .qa-toggle {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    color: var(--muted);
+    transition: transform .2s, background .2s, color .2s;
+    margin-top: 2px;
+  }
+  .qa-card.open .qa-toggle {
+    transform: rotate(180deg);
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  .qa-a { display: none; }
+  .qa-card.open .qa-a { display: block; }
+  .qa-a-inner {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.9;
+    border-top: 1.5px solid var(--border);
+    padding: 14px 18px 16px 58px;
+  }
+  .qa-a-inner strong { color: var(--text); font-weight: 700; }
+  .qa-a-inner ul { list-style: none; margin: 8px 0; }
+  .qa-a-inner ul li {
+    padding: 3px 0;
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .qa-a-inner ul li::before {
+    content: '›';
+    color: var(--blue);
+    font-weight: 900;
+    font-size: 16px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  /* ── NOTICE ── */
+  .notice {
+    background: #fff8e6;
+    border: 1.5px solid #f5d060;
+    border-left: 5px solid var(--yellow);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #6b5000;
+    margin-top: 40px;
+    line-height: 1.85;
+  }
+  .notice strong { color: #8a6000; }
+
+  /* ── BACK TOP ── */
+  .back-top {
+    display: block;
+    text-align: center;
+    margin-top: 36px;
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .back-top:hover { color: var(--blue); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 10px 0 18px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 20px 36px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .qa-a-inner { padding-left: 18px; }
+    .hero-stats { gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="hero-badge">📱 MNP KNOWLEDGE BASE</div>
+  <h1>初級者向け<br><span>Q&A ベスト50</span></h1>
+  <p>MNPを始める人が最初に知っておくべき質問と回答集</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>50</strong>Q&A収録</div>
+    <div class="hero-stat"><strong>9</strong>カテゴリ</div>
+    <div class="hero-stat"><strong>厳選</strong>情報集約</div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>CONTENTS — カテゴリ一覧</h2>
+    <div class="toc-grid">
+      <a href="#secA" class="toc-item"><span class="toc-dot" style="background:#0066cc"></span>A. 基本的な仕組み・ルール</a>
+      <a href="#secB" class="toc-item"><span class="toc-dot" style="background:#00a550"></span>B. UQ・povo・ワイモバイル</a>
+      <a href="#secC" class="toc-item"><span class="toc-dot" style="background:#e8002d"></span>C. ソフトバンク・ドコモ</a>
+      <a href="#secD" class="toc-item"><span class="toc-dot" style="background:#f59e0b"></span>D. 利用者・名義・家族</a>
+      <a href="#secE" class="toc-item"><span class="toc-dot" style="background:#7c3aed"></span>E. 弾（eSIM・格安SIM）</a>
+      <a href="#secF" class="toc-item"><span class="toc-dot" style="background:#0891b2"></span>F. eSIM・物理SIM</a>
+      <a href="#secG" class="toc-item"><span class="toc-dot" style="background:#db2777"></span>G. CB・特典・ポイント</a>
+      <a href="#secH" class="toc-item"><span class="toc-dot" style="background:#ff6b00"></span>H. 店舗・量販店の注意点</a>
+      <a href="#secI" class="toc-item"><span class="toc-dot" style="background:#00a550"></span>I. 初心者がまずやること</a>
+    </div>
+  </div>
+
+  <!-- ═══ SECTION A ═══ -->
+  <div class="section" id="secA">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#0066cc,#0099ff)">A</div>
+      <div class="section-title">基本的な仕組み・ルール</div>
+      <div class="section-count">Q1〜10</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q1</div>
+          <div class="qa-q-label">MNPとは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          電話番号をそのまま他のキャリアに乗り換えることです。乗り換え時にキャッシュバック（CB）や端末値引きなどの特典を受け取れます。<strong>新規契約よりMNPの方がCBが多い</strong>のが基本です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q2</div>
+          <div class="qa-q-label">キャッシュバック（CB）はいつもらえますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          店舗や案件によって異なります。<ul><li>即日現金・ポイントが多い</li><li>翌々月以降にPayPayやポイントで届くケースもある</li></ul>契約時に必ず確認しましょう。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q3</div>
+          <div class="qa-q-label">新規契約とMNPはどちらがお得ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          基本的に<strong>MNPの方がCBが多く出ます。</strong>新規はCBが少ないため、MNPでの乗り換えが推奨です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q4</div>
+          <div class="qa-q-label">キャリアのブラックリストとは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          短期解約や不正利用を繰り返すと、各キャリアの審査に通りにくくなる状態のことです。「<strong>総合（総合判断NG）</strong>」とも呼ばれます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q5</div>
+          <div class="qa-q-label">ブラックになったらどのくらいで回復しますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          一般的に<strong>6ヶ月〜1年程度</strong>が目安です。キャリアによって異なるため、慎重に動きましょう。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q6</div>
+          <div class="qa-q-label">「喪明け」とはどういう意味ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          ブラック状態が解除されて、再び契約できるようになることです。喪明け後も同じキャリア・店舗は避けるのが無難です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q7</div>
+          <div class="qa-q-label">量販店とキャリアショップの違いは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <ul>
+            <li><strong>量販店</strong>（ヤマダ・ヨドバシ等）：91日維持でOKが多い</li>
+            <li><strong>キャリアショップ</strong>：店員の指示通り6〜7ヶ月維持が望ましい</li>
+          </ul>
+          インセンティブの仕組みが異なるため対応が違います。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q8</div>
+          <div class="qa-q-label">「稼働確認」とは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          契約した回線を実際に使用すること（通信・通話など）です。3ヶ月以上非稼働だと審査に悪影響が出る可能性があります。<strong>月1回は使うようにしましょう。</strong>
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q9</div>
+          <div class="qa-q-label">「弾（たま）」とは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          MNPの乗り換え元として使うSIM・回線のことです。ポケシム・日本通信・楽天などが弾として使われます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q10</div>
+          <div class="qa-q-label">「手配師」とは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          案件（CB付きのMNP契約）を紹介・手配してくれる人のことです。<strong>新米手配師やフォロワーの少ない手配師は信頼性に注意が必要です。</strong>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION B ═══ -->
+  <div class="section" id="secB">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#00a550,#00cc66)">B</div>
+      <div class="section-title">UQ・povo・ワイモバイル（YM）関連</div>
+      <div class="section-count">Q11〜18</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q11</div>
+          <div class="qa-q-label">UQは何回線まで契約できますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          1名義で<strong>最大5回線</strong>まで契約できます。MNPは3回線、新規は2回線が基本（5本一気に可能）。利用者は2回線につき1名の用意が必要です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q12</div>
+          <div class="qa-q-label">UQで91日待たずに再契約する方法はありますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>UQ→povo</strong>に乗り換えることで91日の制限を突破できます。povoはKDDIグループのため短期解約扱いになりにくいです。povo後にUQに戻ると再び枠が開きます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q13</div>
+          <div class="qa-q-label">UQ→povo→UQのループはブラックになりますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>2〜3回転で総合（ブラック）になるケース</strong>が報告されています。povo<strong>180日保持</strong>でブラックを回避する方法が推奨されています。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q14</div>
+          <div class="qa-q-label">UQのCBを受け取ったあと別の店舗でも受け取れますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          UQは<strong>180日以内に同じ利用者で特典を受け取った場合、別店舗での受け取りは難しい</strong>です。SB・YMは別店舗でも可能なので混同しないよう注意。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q15</div>
+          <div class="qa-q-label">ワイモバイル（YM）は何回線まで持てますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          YMとSBは各<strong>5回線まで</strong>持てます。YM5回線をSBにアップグレードすると、またYMの枠が空きます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q16</div>
+          <div class="qa-q-label">YM→SBへのアップグレードとは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          ワイモバイルからソフトバンクへの機種変更のことです。この際もCBが発生する場合があります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q17</div>
+          <div class="qa-q-label">ワイモバイルのプラン変更はいつからできますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          店舗によって異なります。翌日からOKと言われる場合も、2ヶ月維持を求められる場合もあります。<strong>必ず契約した店舗の指示に従いましょう</strong>（でないと代理店にペナルティが入ります）。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q18</div>
+          <div class="qa-q-label">UQのセット割（電気・ネット）はどうすればいいですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          電気もネットも実際に料金が発生します。<ul><li>電気：現在の料金とほぼ同額が請求される</li><li>ネット：基本料金がかかる</li></ul>CBがコストを上回るか計算してから契約しましょう。
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION C ═══ -->
+  <div class="section" id="secC">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#e8002d,#ff4d6a)">C</div>
+      <div class="section-title">ソフトバンク（SB）・ドコモ関連</div>
+      <div class="section-count">Q19〜24</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q19</div>
+          <div class="qa-q-label">ソフトバンク光は何回線まで引けますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          同一住所への2回線目はシステム上申込できますがスタッフ側でストップされる可能性があります。別住所なら可能性あり。<strong>基本的に1本で十分</strong>です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q20</div>
+          <div class="qa-q-label">ソフトバンク光のCBはいつもらえますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          安心乗り換えパックの場合、<strong>6ヶ月後が目安</strong>です。解約した場合はCBが入らないこともあるため、6ヶ月維持が推奨されます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q21</div>
+          <div class="qa-q-label">ソフトバンク光をブラックにならずに解約するには？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          3ヶ月目を過ぎれば解約金はかかりません。ただしSBひかりブラックになると特典・割引が受けられなくなるため<strong>6ヶ月維持が安全</strong>です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q22</div>
+          <div class="qa-q-label">ドコモのMNPは何回線まで一度にできますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          量販店では基本<strong>2回線まで</strong>。180日（約6ヶ月）空ければ再度2回線のMNPが可能です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q23</div>
+          <div class="qa-q-label">ドコモのホームルーターで家電値引きを受けた後は？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          割引額が維持費を上回れば継続、下回れば解約がおすすめです。一括購入の場合、維持期間の縛りはありません。SB光への乗り換えと組み合わせるとお得なコンボになります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q24</div>
+          <div class="qa-q-label">ドコモのプラン変更の料金は？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <ul>
+            <li>MAX→mini・mini→MAX：<strong>31日分の料金全額</strong>が請求されます</li>
+            <li>max/mini→データプラス5G：<strong>データプラス1100円のみ</strong>でOKです</li>
+          </ul>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION D ═══ -->
+  <div class="section" id="secD">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">D</div>
+      <div class="section-title">利用者・名義・家族関連</div>
+      <div class="section-count">Q25〜30</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q25</div>
+          <div class="qa-q-label">利用者と契約者は何が違いますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>契約者</strong>＝支払いの名義人、<strong>利用者</strong>＝実際に使う人です。YM・SBは利用者1人につき2回線まで登録できます。利用者を増やすことで契約できる回線数が増えます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q26</div>
+          <div class="qa-q-label">子供を利用者や契約者にできますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>12歳以上</strong>であれば弾（eSIM等）の契約者・利用者として使えます。楽天は0歳名義でも10回線作れた実績があります。UQ・YM・SBのMNP案件も12歳以上でOKです。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q27</div>
+          <div class="qa-q-label">2歳の子供でも利用者として回線数を稼げますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>0歳でも通った実績があります</strong>（参加者の実体験より）。ただしキャリアや店舗によって対応が異なります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q28</div>
+          <div class="qa-q-label">同一利用者で何回線まで登録できますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          YM・SBは利用者1人につき<strong>2回線まで</strong>。UQも同様に1人2回線が基本です。<strong>6人家族なら最大12回線</strong>まで審査基準上は可能です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q29</div>
+          <div class="qa-q-label">データ回線（タブレット等）は利用者数にカウントされますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>SBのMNPにおいてはタブレットのデータ回線も利用者1回線としてカウントされます</strong>（SB本社確認済み）。2回線目が通らない場合はデータ回線の使用者変更か解約が必要です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q30</div>
+          <div class="qa-q-label">家族の名義でも契約できますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          できます。契約者は家族名義で問題ありません。ただし同一利用者・同一住所での同月内の大量契約は本社からヒアリングが入る可能性があるため注意が必要です。
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION E ═══ -->
+  <div class="section" id="secE">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">E</div>
+      <div class="section-title">弾（eSIM・格安SIM）関連</div>
+      <div class="section-count">Q31〜36</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q31</div>
+          <div class="qa-q-label">弾（MNP乗り換え元）に使えるSIMはどれですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          主に以下が使われます：<ul>
+            <li>ポケシム（アテナ系）</li>
+            <li>日本通信（5回線まで）</li>
+            <li>楽天モバイル</li>
+            <li>IIJmio（au回線）</li>
+            <li>リンクスメイト（d回線）</li>
+            <li>NUROモバイル（SB回線）</li>
+            <li>mineo</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q32</div>
+          <div class="qa-q-label">日本通信は通信なしで予約番号発行できますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          はい。マイページから<strong>通信不要で予約番号を発行</strong>できます。eSIMをダウンロードせずに予約番号が出せるため弾として非常に使いやすいです。最大5回線まで。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q33</div>
+          <div class="qa-q-label">楽天でSMS認証を使い回せますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          短時間で連続して予約番号を出す場合、最初の1回のSMS認証番号を<strong>使い回せる可能性が高い</strong>です。ただし確実ではないため注意が必要です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q34</div>
+          <div class="qa-q-label">ポケシムとは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          MNP用のeSIMサービスです。<strong>ドコモ回線のため全キャリアの弾に対応</strong>しています。何回線使ってもブラックにならないとされています。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q35</div>
+          <div class="qa-q-label">iijmioの端末割引は何回線まで受けられますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>1名義・12ヶ月に1回のみ</strong>です。短期解約すると総合（ブラック）になりやすく、喪明けに1年以上かかるため注意が必要です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q36</div>
+          <div class="qa-q-label">弾に使うSIMの維持期間はどのくらいが安全ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          一般的にpovo等に落として<strong>180日（6ヶ月）保持が推奨</strong>です。翌日にMNPすると総合リスクがあります。
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION F ═══ -->
+  <div class="section" id="secF">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#0891b2,#06b6d4)">F</div>
+      <div class="section-title">eSIM・物理SIM・複数SIM関連</div>
+      <div class="section-count">Q37〜40</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q37</div>
+          <div class="qa-q-label">eSIMと物理SIMの違いは何ですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <ul>
+            <li><strong>物理SIM</strong>：カード型のSIM。物理的に入れ替える必要があります</li>
+            <li><strong>eSIM</strong>：スマホにデジタルでインストールするSIM</li>
+          </ul>
+          弾として使う場合、eSIMは通信しなくても予約番号が出せます。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q38</div>
+          <div class="qa-q-label">1台のスマホに何枚のSIMを入れられますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          機種によりますが、iPhoneは楽天・日本通信を<strong>同時に10枚程度</strong>入れられます。Pixel 8aは8個まで。mineoは1つずつです。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q39</div>
+          <div class="qa-q-label">複数SIMスロットの端末はどこで買えますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>AliExpress</strong>で購入できます。複数の物理SIMを同時に入れて稼働確認できるため便利です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q40</div>
+          <div class="qa-q-label">eSIMをインストールせずにMNPはできますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          はい。<strong>予約番号さえ発行できれば、eSIMや物理SIMを入れなくてもMNP登録は可能</strong>です。SMS認証が必要な場合は一時的に取り込んで認証後に消してOKです。
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION G ═══ -->
+  <div class="section" id="secG">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#db2777,#ec4899)">G</div>
+      <div class="section-title">CB・特典・ポイント活用</div>
+      <div class="section-count">Q41〜45</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q41</div>
+          <div class="qa-q-label">CBの相場はどのくらいですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          目安として：<ul>
+            <li>UQ3回線（電気・WiMAX込み）：<strong>1回線あたり35,000pt</strong>が相場</li>
+            <li>YM→SBアップグレード：<strong>10,000円×2回線</strong></li>
+            <li>UQ→YM：<strong>35,000円×2回線</strong></li>
+          </ul>
+          案件・時期・店舗によって大きく変わります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q42</div>
+          <div class="qa-q-label">でんき・ひかりはキャンセルしてもCBはもらえますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          でんきもひかりも、<strong>キャンセルしていなければCBはもらえます</strong>。申告してセット割を組む必要があります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q43</div>
+          <div class="qa-q-label">既存の電気・光回線があってもCBはもらえますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          はい。<strong>既存でも紐付け（セット割）をすることでCBがもらえます。</strong>申告をしっかり行いましょう。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q44</div>
+          <div class="qa-q-label">PayPayキャンペーンはどうやってもらいますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>契約時にエントリーが必要</strong>です（忘れずに！）。翌々月頃にPayPayで届くケースが多いです。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q45</div>
+          <div class="qa-q-label">ポイントで家電を買って換金する場合おすすめは？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <strong>スイッチやPS5</strong>など定番ゲーム機が換金しやすいです。買取業者はAIで調べると最新情報が確認できます。
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION H ═══ -->
+  <div class="section" id="secH">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#ff6b00,#ff9500)">H</div>
+      <div class="section-title">店舗・量販店での注意点</div>
+      <div class="section-count">Q46〜49</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q46</div>
+          <div class="qa-q-label">同月内に同じ店舗で何回線まで契約できますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          テルル等では、SY（SB・YM）で同一住所・同月<strong>4回線まで</strong>という制限があります。同月内に5回線以上登録されると本社からヒアリングが入ることがあります。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q47</div>
+          <div class="qa-q-label">別の店舗でも同じ月にMNPできますか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          同月・同住所で5回線以上は本社から代理店に連絡が入るリスクがあります。<strong>安全運転として月4回線以内・翌月に残りを埋める</strong>方法が推奨です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q48</div>
+          <div class="qa-q-label">エディオンでポケSIMを使ったらNGになりました。なぜ？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          エディオンは<strong>稼働履歴を確認して厳しく対応する</strong>ケースがあります。店舗によって審査の厳しさが異なるため注意が必要です。
+        </div></div>
+      </div>
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q49</div>
+          <div class="qa-q-label">怪しい手配師の見分け方は？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <ul>
+            <li>フォロワー数が少ない</li>
+            <li>今の時期に出せないような高額案件を出している</li>
+            <li>実績が確認できない</li>
+          </ul>
+          上記に当てはまる場合は非推奨です。<strong>信頼できる人の紹介を優先しましょう。</strong>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ SECTION I ═══ -->
+  <div class="section" id="secI">
+    <div class="section-header">
+      <div class="section-badge" style="background:linear-gradient(135deg,#00a550,#00cc66)">I</div>
+      <div class="section-title">初心者がまずやること</div>
+      <div class="section-count">Q50</div>
+    </div>
+    <div class="qa-list">
+
+      <div class="qa-card">
+        <div class="qa-q" onclick="toggle(this)">
+          <div class="qa-num">Q50</div>
+          <div class="qa-q-label">MNPを始めるにあたって最初に何をすればいいですか？</div>
+          <div class="qa-toggle">▼</div>
+        </div>
+        <div class="qa-a"><div class="qa-a-inner">
+          <ul>
+            <li>① 現在の回線状況を整理する（キャリア・利用者・回線数）</li>
+            <li>② 弾（乗り換え元）を用意する（ポケシム・日本通信・楽天など）</li>
+            <li>③ 信頼できる手配師・案件を探す</li>
+            <li>④ 稼働確認を月1回忘れずに行う</li>
+            <li>⑤ <strong>安全運転を心がける</strong>（無理な回転はブラックリスト入りのリスクあり）</li>
+          </ul>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NOTICE -->
+  <div class="notice">
+    <strong>⚠️ 注意事項</strong><br>
+    案件の内容・CB額・ルールは頻繁に変わります。必ず最新情報を確認してから動いてください。架空申込（空申込）は厳密には規約違反のリスクがあります。店舗・手配師の指示には必ず従いましょう。
+  </div>
+
+  <a href="#top" class="back-top">↑ トップに戻る</a>
+
+</div>
+
+<script>
+function toggle(qEl) {
+  const card = qEl.closest('.qa-card');
+  card.classList.toggle('open');
+}
+document.querySelector('.qa-card').classList.add('open');
+</script>
+</body>
+</html>
